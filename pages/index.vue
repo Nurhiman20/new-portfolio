@@ -15,7 +15,7 @@
         :title="item.title"
         class="mt-6"
         link
-        @click="$vuetify.goTo(item.to, options)"
+        @click="scrollTo(item.to)"
       ></v-list-item>
     </v-list>
   </v-navigation-drawer>
@@ -263,6 +263,8 @@
 </template>
 
 <script setup>
+import { useGoTo } from "vuetify";
+
 import icImage from "@/assets/images/interconnectdata.png";
 import makasiImage from "@/assets/images/makasipos.png";
 import tciImage from "@/assets/images/tci.png";
@@ -300,14 +302,24 @@ useHead({
 });
 
 const drawer = ref(true);
-const mini = ref(true);
 const items = [
   { title: "Home", icon: "mdi-home-outline", to: "#home" },
+  { title: "My Work", icon: "mdi-eye-outline", to: "#work" },
   { title: "About me", icon: "mdi-account-circle-outline", to: "#about-me" },
   { title: "Skills", icon: "mdi-cog-outline", to: "#skills" },
-  { title: "My Work", icon: "mdi-eye-outline", to: "#work" },
   { title: "Contact", icon: "mdi-email-outline", to: "#contact" },
 ];
+const options = computed(() => {
+  return {
+    duration: 750,
+    offset: 0,
+    easing: "easeInOutQuad",
+  };
+});
+const goTo = useGoTo();
+const scrollTo = (to) => {
+  goTo(to, options.value);
+};
 
 const projects = [
   {
