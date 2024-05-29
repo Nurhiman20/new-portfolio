@@ -188,6 +188,57 @@
         </div>
       </v-container>
     </section>
+    <section id="contact">
+      <v-container class="d-flex flex-column h-100 py-12">
+        <p class="text-large text-primary mb-4">Let's talk</p>
+        <v-row>
+          <v-col cols="12" md="12" lg="12">
+            <div class="d-flex flex-column justify-center">
+              <v-icon color="#8D8D8D" size="120" class="mx-auto"
+                >mdi-email-outline</v-icon
+              >
+              <p class="mx-auto">nurhimanangga@gmail.com</p>
+            </div>
+          </v-col>
+          <v-col cols="12" md="4" lg="4">
+            <div class="d-flex flex-column justify-center">
+              <a
+                href="https://github.com/Nurhiman20"
+                target="_blank"
+                class="d-flex flex-column mx-auto"
+              >
+                <v-icon color="#8D8D8D" size="120">mdi-github</v-icon>
+                <p class="mx-auto">Github Profile</p>
+              </a>
+            </div>
+          </v-col>
+          <v-col cols="12" md="4" lg="4">
+            <div class="d-flex flex-column justify-center">
+              <a
+                href="https://www.linkedin.com/in/nurhiman-a/"
+                target="_blank"
+                class="d-flex flex-column mx-auto"
+              >
+                <v-icon color="#8D8D8D" size="120">mdi-linkedin</v-icon>
+                <p class="mx-auto">LinkedIn</p>
+              </a>
+            </div>
+          </v-col>
+          <v-col cols="12" md="4" lg="4">
+            <div class="d-flex flex-column justify-center">
+              <a
+                href="https://gitlab.com/nurhiman_a"
+                target="_blank"
+                class="d-flex flex-column mx-auto"
+              >
+                <v-icon color="#8D8D8D" size="120">mdi-gitlab</v-icon>
+                <p class="mx-auto">Gitlab Profile</p>
+              </a>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
   </v-main>
 </template>
 
