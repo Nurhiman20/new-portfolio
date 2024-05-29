@@ -1,7 +1,7 @@
 <template>
   <v-main>
-    <v-container class="h-100">
-      <section id="home">
+    <section id="home">
+      <v-container class="h-100">
         <v-row>
           <v-col cols="12" md="6" lg="6" class="py-0">
             <div class="d-flex h-100">
@@ -15,7 +15,7 @@
                   <v-btn
                     outlined
                     large
-                    color="#578CE0"
+                    color="primary"
                     @click="$vuetify.goTo('#contact', options)"
                     >Contact Me</v-btn
                   >
@@ -31,12 +31,70 @@
             </div>
           </v-col>
         </v-row>
-      </section>
-    </v-container>
+      </v-container>
+    </section>
+    <section id="work" class="mt-n16">
+      <v-container class="d-flex flex-column">
+        <h1 class="text-large text-primary mb-4 mx-auto">What I've done</h1>
+        <div class="d-flex flex-column justify-center mt-6">
+          <v-carousel cycle hide-delimiter-background :show-arrows="false">
+            <v-carousel-item
+              v-for="(itemProject, indexProject) in projects"
+              :key="indexProject"
+            >
+              <v-sheet
+                color="#1D1D1D"
+                height="100%"
+                class="d-flex flex-column justify-center align-center"
+              >
+                <v-row>
+                  <v-col cols="12" md="8" lg="8" class="px-12">
+                    <div class="fill-height d-flex">
+                      <v-img
+                        :aspect-ratio="1366 / 625"
+                        width="60"
+                        :src="itemProject.image"
+                      ></v-img>
+                    </div>
+                  </v-col>
+                  <v-col cols="12" md="4" lg="4" class="px-4">
+                    <h1>{{ itemProject.title }}</h1>
+                    <p class="line-height-small">
+                      {{ itemProject.description }}
+                    </p>
+                    <a v-if="itemProject.link" :href="itemProject.link" target="_blank">{{
+                      itemProject.link
+                    }}</a>
+                  </v-col>
+                  <v-col cols="12" md="12" lg="12" class="py-0 px-4" align="center">
+                    <v-chip
+                      class="mx-2"
+                      color="#578CE0"
+                      label
+                      v-for="(stack, i) in itemProject.stacks"
+                      :key="i"
+                    >
+                      {{ stack }}
+                    </v-chip>
+                  </v-col>
+                </v-row>
+              </v-sheet>
+            </v-carousel-item>
+          </v-carousel>
+        </div>
+      </v-container>
+    </section>
   </v-main>
 </template>
 
 <script setup>
+import icImage from "@/assets/images/interconnectdata.png";
+import makasiImage from "@/assets/images/makasipos.png";
+import tciImage from "@/assets/images/tci.png";
+import eatmoreImage from "@/assets/images/Eatmore2.png";
+import mytreatsImage from "@/assets/images/MyTreats2.png";
+import treadyImage from "@/assets/images/Tready.png";
+
 useHead({
   title: "Angga Nurhiman | Portfolio",
   meta: [
@@ -47,4 +105,100 @@ useHead({
     },
   ],
 });
+
+const projects = [
+  {
+    title: "InterconnectDATA",
+    image: icImage,
+    description:
+      "InterconnectDATA is a big data analytic platform to provide millions of global business professionals with comprehensive data on private and public markets, assisting them to discover and create opportunities accurately.",
+    link: "https://apps.interconnectdata.com/",
+    stacks: [
+      "Frontend",
+      "Vue.js",
+      "Nuxt",
+      "Vuetify",
+      "Vue Router",
+      "Vuex",
+      "HTML",
+      "SASS (SCSS)",
+      "Axios",
+      "API Integration",
+    ],
+  },
+  {
+    title: "MakasiPOS Dashboard",
+    image: makasiImage,
+    description:
+      "Makasi is an application used by various retail and non-retail businesses to facilitate buying and selling transactions and business operational processes.",
+    link: "https://app.makasipos.com/",
+    stacks: [
+      "Frontend",
+      "Vue.js",
+      "Vuesax",
+      "Vue Router",
+      "Pinia",
+      "HTML",
+      "SASS (SCSS)",
+      "Axios",
+      "API Integration",
+    ],
+  },
+  {
+    title: "TCI Landing Page",
+    image: tciImage,
+    description: "Landing page for PT Teknologi Cakra Internasional",
+    link: "https://teknologicakrainternasional.com/",
+    stacks: ["Frontend", "Vue.js", "Bootstrap", "GSAP", "HTML", "SASS (SCSS)"],
+  },
+  {
+    title: "Eatmore ERP",
+    image: eatmoreImage,
+    description:
+      "This website is used to manage and integrate operational activities in a restaurant that is already an Eatmore merchant.",
+    link: "https://app.makasipos.com/",
+    stacks: [
+      "Frontend",
+      "Vue.js",
+      "Vuetify",
+      "Vue Router",
+      "Vuex",
+      "HTML",
+      "SASS (SCSS)",
+      "Axios",
+      "API Integration",
+    ],
+  },
+  {
+    title: "MyTreats",
+    image: mytreatsImage,
+    description:
+      "E-voucher and attractive offers marketplace that are connected with various merchants in Malaysia.",
+    stacks: [
+      "Frontend",
+      "Vue.js",
+      "Vuesax",
+      "Vue Router",
+      "Vuex",
+      "HTML",
+      "SASS (SCSS)",
+      "Axios",
+      "API Integration",
+    ],
+  },
+  {
+    title: "Tready",
+    image: treadyImage,
+    description: "Landing page for trading app.",
+    stacks: ["Frontend", "Bootstrap", "HTML", "SASS (SCSS)"],
+  },
+];
 </script>
+
+<style lang="scss">
+#home {
+  img {
+    width: 80%;
+  }
+}
+</style>
