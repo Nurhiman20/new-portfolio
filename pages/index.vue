@@ -118,6 +118,76 @@
         </v-row>
       </v-container>
     </section>
+    <section id="skills">
+      <v-container class="d-flex h-100">
+        <div class="vertical-center w-full">
+          <p class="text-large text-primary">My Skills</p>
+          <v-row class="mt-3">
+            <v-col cols="12" md="7" lg="7" class="py-0 px-4">
+              <div class="d-flex flex-column">
+                <div class="mx-auto">
+                  <h1>Most Used Tools</h1>
+                </div>
+                <div class="d-flex flex-row py-3">
+                  <v-row>
+                    <v-col
+                      cols="3"
+                      md="3"
+                      lg="3"
+                      class="py-0"
+                      v-for="(mostUsed, index) in mostUsedSkills"
+                      :key="index"
+                    >
+                      <div class="d-flex flex-column">
+                        <v-avatar tile color="white" size="10vw" class="mx-auto">
+                          <img
+                            :src="mostUsed.src"
+                            :alt="mostUsed.text"
+                            style="max-height: 70%; max-width: 80%"
+                          />
+                        </v-avatar>
+                        <p class="mx-auto skill-text">{{ mostUsed.text }}</p>
+                      </div>
+                    </v-col>
+                  </v-row>
+                </div>
+              </div>
+            </v-col>
+            <v-col cols="12" md="4" lg="1" class="py-0"></v-col>
+            <v-col cols="12" md="4" lg="4" class="py-0">
+              <div class="d-flex flex-column">
+                <div class="mx-auto">
+                  <h1>Know The Basics</h1>
+                </div>
+                <div class="d-flex flex-row py-3">
+                  <v-row>
+                    <v-col
+                      cols="3"
+                      md="6"
+                      lg="6"
+                      class="py-0"
+                      v-for="(knowBasic, index) in knowBasics"
+                      :key="index"
+                    >
+                      <div class="d-flex flex-column">
+                        <v-avatar tile color="white" size="10vw" class="mx-auto">
+                          <img
+                            :src="knowBasic.src"
+                            :alt="knowBasic.text"
+                            style="max-height: 70%; max-width: 70%"
+                          />
+                        </v-avatar>
+                        <p class="mx-auto skill-text">{{ knowBasic.text }}</p>
+                      </div>
+                    </v-col>
+                  </v-row>
+                </div>
+              </div>
+            </v-col>
+          </v-row>
+        </div>
+      </v-container>
+    </section>
   </v-main>
 </template>
 
@@ -128,6 +198,24 @@ import tciImage from "@/assets/images/tci.png";
 import eatmoreImage from "@/assets/images/Eatmore2.png";
 import mytreatsImage from "@/assets/images/MyTreats2.png";
 import treadyImage from "@/assets/images/Tready.png";
+
+import vueLogo from "@/assets/images/vue.svg";
+import nuxtLogo from "@/assets/images/nuxt.png";
+import vuetifyLogo from "@/assets/images/vuetify.svg";
+import vuexLogo from "@/assets/images/vuex.png";
+import piniaLogo from "@/assets/images/pinia.svg";
+import bootstrapLogo from "@/assets/images/bootstrap.svg";
+import htmlLogo from "@/assets/images/html.svg";
+import cssLogo from "@/assets/images/css.svg";
+import jsLogo from "@/assets/images/javascript.svg";
+import tsLogo from "@/assets/images/typescript.svg";
+import scssLogo from "@/assets/images/sass.svg";
+
+import reactLogo from "@/assets/images/react.png";
+import nodeLogo from "@/assets/images/nodejs.svg";
+import tailwindLogo from "@/assets/images/tailwind.png";
+import graphqlLogo from "@/assets/images/graphql.png";
+import firebaseLogo from "@/assets/images/firebase.svg";
 
 useHead({
   title: "Angga Nurhiman | Portfolio",
@@ -225,6 +313,74 @@ const projects = [
     image: treadyImage,
     description: "Landing page for trading app.",
     stacks: ["Frontend", "Bootstrap", "HTML", "SASS (SCSS)"],
+  },
+];
+const mostUsedSkills = [
+  {
+    src: vueLogo,
+    text: "Vue.js",
+  },
+  {
+    src: nuxtLogo,
+    text: "NuxtJs",
+  },
+  {
+    src: vuetifyLogo,
+    text: "Vuetify",
+  },
+  {
+    src: vuexLogo,
+    text: "vuex",
+  },
+  {
+    src: piniaLogo,
+    text: "Pinia",
+  },
+  {
+    src: bootstrapLogo,
+    text: "Bootstrap",
+  },
+  {
+    src: htmlLogo,
+    text: "HTML",
+  },
+  {
+    src: cssLogo,
+    text: "CSS",
+  },
+  {
+    src: jsLogo,
+    text: "Javascript",
+  },
+  {
+    src: tsLogo,
+    text: "TypeScript",
+  },
+  {
+    src: scssLogo,
+    text: "Sass (Scss)",
+  },
+];
+const knowBasics = [
+  {
+    src: reactLogo,
+    text: "React",
+  },
+  {
+    src: nodeLogo,
+    text: "Node.js",
+  },
+  {
+    src: tailwindLogo,
+    text: "Tailwind",
+  },
+  {
+    src: graphqlLogo,
+    text: "GraphQL",
+  },
+  {
+    src: firebaseLogo,
+    text: "Firebase",
   },
 ];
 </script>
