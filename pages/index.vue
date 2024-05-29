@@ -1,4 +1,24 @@
 <template>
+  <v-navigation-drawer v-model="drawer" rail color="#181818" dark expand-on-hover>
+    <v-list-item
+      class="px-2"
+      prepend-avatar="@/assets/images/Ava.png"
+      title="Angga Nurhiman"
+      style="background-color: #070707"
+    ></v-list-item>
+
+    <v-list dense nav>
+      <v-list-item
+        v-for="item in items"
+        :key="item.title"
+        :prepend-icon="item.icon"
+        :title="item.title"
+        class="mt-6"
+        link
+        @click="$vuetify.goTo(item.to, options)"
+      ></v-list-item>
+    </v-list>
+  </v-navigation-drawer>
   <v-main>
     <section id="home">
       <v-container class="h-100">
@@ -279,6 +299,16 @@ useHead({
   ],
 });
 
+const drawer = ref(true);
+const mini = ref(true);
+const items = [
+  { title: "Home", icon: "mdi-home-outline", to: "#home" },
+  { title: "About me", icon: "mdi-account-circle-outline", to: "#about-me" },
+  { title: "Skills", icon: "mdi-cog-outline", to: "#skills" },
+  { title: "My Work", icon: "mdi-eye-outline", to: "#work" },
+  { title: "Contact", icon: "mdi-email-outline", to: "#contact" },
+];
+
 const projects = [
   {
     title: "InterconnectDATA",
@@ -441,5 +471,16 @@ const knowBasics = [
   img {
     width: 80%;
   }
+}
+
+.v-navigation-drawer--rail:not(.v-navigation-drawer--expand-on-hover)
+  .v-list-item
+  .v-avatar,
+.v-navigation-drawer--rail.v-navigation-drawer--expand-on-hover:not(.v-navigation-drawer--is-hovering)
+  .v-list-item
+  .v-avatar {
+  height: 45px;
+  width: 45px;
+  margin-left: -3px;
 }
 </style>
