@@ -84,6 +84,40 @@
         </div>
       </v-container>
     </section>
+    <section id="about-me">
+      <v-container class="h-100 d-flex">
+        <v-row>
+          <v-col cols="12" md="6" lg="6" class="py-0 vertical-center">
+            <div class="d-flex pa-4">
+              <div class="mx-auto mb-6">
+                <v-avatar size="30vh">
+                  <img src="@/assets/images/foto.png" alt="Angga Nurhiman" />
+                </v-avatar>
+              </div>
+            </div>
+          </v-col>
+          <v-col cols="12" md="6" lg="6" class="py-0 vertical-center">
+            <div class="d-flex flex-column">
+              <div>
+                <p class="text-large text-primary">About Me</p>
+              </div>
+              <div class="mt-3">
+                <p class="line-height-small">
+                  My name is Angga Nurhiman. I'm a front-end web developer living in
+                  Bogor, Indonesia. As a front-end web developer, I have experience using
+                  Vue.js. I like it when I can overcome problems with that technology, and
+                  also I'm interested in learning new things.
+                </p>
+                <p class="line-height-small mt-2">
+                  Besides working on the code, I also like to play football or futsal.
+                  This activity keeps my body fit and makes my mind more relaxed.
+                </p>
+              </div>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
   </v-main>
 </template>
 
