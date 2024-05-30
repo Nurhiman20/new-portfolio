@@ -78,7 +78,7 @@
                     </div>
                   </v-col>
                   <v-col cols="12" md="4" lg="4" class="px-4">
-                    <h1>{{ itemProject.title }}</h1>
+                    <h1 class="project-title">{{ itemProject.title }}</h1>
                     <p class="line-height-small">
                       {{ itemProject.description }}
                     </p>
@@ -265,6 +265,8 @@
 <script setup>
 import { useGoTo } from "vuetify";
 
+import wwfImage from "@/assets/images/wwf.png";
+import menaraUltraImage from "@/assets/images/menara-ultra.png";
 import icImage from "@/assets/images/interconnectdata.png";
 import makasiImage from "@/assets/images/makasipos.png";
 import tciImage from "@/assets/images/tci.png";
@@ -322,6 +324,30 @@ const scrollTo = (to) => {
 };
 
 const projects = [
+  {
+    title: "Interactive Floor Plan for 10th World Water Forum",
+    image: wwfImage,
+    description:
+      "Interactive floor plan application designed to facilitate users in navigating and understanding the layout of a specific area or building. This application allows users to view maps with interactive features such as zoom, panning, and clickable location markers for additional information.",
+    link: "https://10thwwf.woodezig.id/",
+    stacks: [
+      "Frontend",
+      "Vue.js",
+      "Nuxt",
+      "Vuetify",
+      "Three.js",
+      "HTML",
+      "SASS (SCSS)",
+      "API Integration",
+    ],
+  },
+  {
+    title: "Menara Ultra Landing Page",
+    image: menaraUltraImage,
+    description: "Landing page for PT Menara Ultra Indonesia",
+    link: "https://www.menaraultra.net/",
+    stacks: ["Frontend", "Vue.js", "Nuxt", "GSAP", "Vue Router", "HTML", "SASS (SCSS)"],
+  },
   {
     title: "InterconnectDATA",
     image: icImage,
@@ -494,5 +520,9 @@ const knowBasics = [
   height: 45px;
   width: 45px;
   margin-left: -3px;
+}
+
+.project-title {
+  line-height: 40px;
 }
 </style>
