@@ -48,8 +48,8 @@
           </v-col>
           <v-col cols="12" md="6" lg="6" class="py-0 hidden-sm-and-down">
             <div class="d-flex h-100">
-              <div class="vertical-center mx-auto">
-                <img src="@/assets/images/logo.png" alt="Logo" />
+              <div class="vertical-center mx-auto logo">
+                <nuxt-img src="/images/logo.png" format="webp" alt="Logo" />
               </div>
             </div>
           </v-col>
@@ -72,11 +72,11 @@
                 <v-row>
                   <v-col cols="12" md="8" lg="8" class="px-12">
                     <div class="d-flex flex-column w-100 project-image">
-                      <img
+                      <nuxt-img
                         :src="itemProject.image"
                         alt="preview"
                         class="project-image w-100"
-                      ></img>
+                      />
                     </div>
                   </v-col>
                   <v-col cols="12" md="4" lg="4" class="px-4">
@@ -162,9 +162,10 @@
                     >
                       <div class="d-flex flex-column">
                         <v-avatar tile color="white" size="10vw" class="mx-auto">
-                          <img
+                          <nuxt-img
                             :src="mostUsed.src"
                             :alt="mostUsed.text"
+                            format="webp"
                             style="max-height: 70%; max-width: 80%"
                           />
                         </v-avatar>
@@ -193,9 +194,10 @@
                     >
                       <div class="d-flex flex-column">
                         <v-avatar tile color="white" size="10vw" class="mx-auto">
-                          <img
+                          <nuxt-img
                             :src="knowBasic.src"
                             :alt="knowBasic.text"
+                            format="webp"
                             style="max-height: 70%; max-width: 70%"
                           />
                         </v-avatar>
@@ -267,33 +269,6 @@
 <script setup>
 import { useGoTo } from "vuetify";
 
-import wwfImage from "@/assets/images/wwf.png";
-import menaraUltraImage from "@/assets/images/menara-ultra.png";
-import icImage from "@/assets/images/interconnectdata.png";
-import makasiImage from "@/assets/images/makasipos.png";
-import tciImage from "@/assets/images/tci.png";
-import eatmoreImage from "@/assets/images/Eatmore2.png";
-import mytreatsImage from "@/assets/images/MyTreats2.png";
-import treadyImage from "@/assets/images/Tready.png";
-
-import vueLogo from "@/assets/images/vue.svg";
-import nuxtLogo from "@/assets/images/nuxt.png";
-import vuetifyLogo from "@/assets/images/vuetify.svg";
-import vuexLogo from "@/assets/images/vuex.png";
-import piniaLogo from "@/assets/images/pinia.svg";
-import bootstrapLogo from "@/assets/images/bootstrap.svg";
-import htmlLogo from "@/assets/images/html.svg";
-import cssLogo from "@/assets/images/css.svg";
-import jsLogo from "@/assets/images/javascript.svg";
-import tsLogo from "@/assets/images/typescript.svg";
-import scssLogo from "@/assets/images/sass.svg";
-
-import reactLogo from "@/assets/images/react.png";
-import nodeLogo from "@/assets/images/nodejs.svg";
-import tailwindLogo from "@/assets/images/tailwind.png";
-import graphqlLogo from "@/assets/images/graphql.png";
-import firebaseLogo from "@/assets/images/firebase.svg";
-
 useHead({
   title: "Angga Nurhiman | Portfolio",
   meta: [
@@ -328,7 +303,7 @@ const scrollTo = (to) => {
 const projects = [
   {
     title: "Interactive Floor Plan for 10th World Water Forum",
-    image: wwfImage,
+    image: "/images/wwf.png",
     description:
       "Interactive floor plan application designed to facilitate users in navigating and understanding the layout of a specific area or building. This application allows users to view maps with interactive features such as zoom, panning, and clickable location markers for additional information.",
     link: "https://10thwwf.woodezig.id/",
@@ -345,14 +320,14 @@ const projects = [
   },
   {
     title: "Menara Ultra Landing Page",
-    image: menaraUltraImage,
+    image: "/images/menara-ultra.png",
     description: "Landing page for PT Menara Ultra Indonesia",
     link: "https://www.menaraultra.net/",
     stacks: ["Frontend", "Vue.js", "Nuxt", "GSAP", "Vue Router", "HTML", "SASS (SCSS)"],
   },
   {
     title: "InterconnectDATA",
-    image: icImage,
+    image: "/images/interconnectdata.png",
     description:
       "InterconnectDATA is a big data analytic platform to provide millions of global business professionals with comprehensive data on private and public markets, assisting them to discover and create opportunities accurately.",
     link: "https://apps.interconnectdata.com/",
@@ -371,7 +346,7 @@ const projects = [
   },
   {
     title: "MakasiPOS Dashboard",
-    image: makasiImage,
+    image: "/images/makasipos.png",
     description:
       "Makasi is an application used by various retail and non-retail businesses to facilitate buying and selling transactions and business operational processes.",
     link: "https://app.makasipos.com/",
@@ -389,14 +364,14 @@ const projects = [
   },
   {
     title: "TCI Landing Page",
-    image: tciImage,
+    image: "/images/tci.png",
     description: "Landing page for PT Teknologi Cakra Internasional",
     link: "https://teknologicakrainternasional.com/",
     stacks: ["Frontend", "Vue.js", "Bootstrap", "GSAP", "HTML", "SASS (SCSS)"],
   },
   {
     title: "Eatmore ERP",
-    image: eatmoreImage,
+    image: "/images/Eatmore2.png",
     description:
       "This website is used to manage and integrate operational activities in a restaurant that is already an Eatmore merchant.",
     link: "https://app.makasipos.com/",
@@ -414,7 +389,7 @@ const projects = [
   },
   {
     title: "MyTreats",
-    image: mytreatsImage,
+    image: "/images/MyTreats2.png",
     description:
       "E-voucher and attractive offers marketplace that are connected with various merchants in Malaysia.",
     stacks: [
@@ -431,76 +406,76 @@ const projects = [
   },
   {
     title: "Tready",
-    image: treadyImage,
+    image: "/images/Tready.png",
     description: "Landing page for trading app.",
     stacks: ["Frontend", "Bootstrap", "HTML", "SASS (SCSS)"],
   },
 ];
 const mostUsedSkills = [
   {
-    src: vueLogo,
+    src: "/images/vue.svg",
     text: "Vue.js",
   },
   {
-    src: nuxtLogo,
+    src: "/images/nuxt.png",
     text: "NuxtJs",
   },
   {
-    src: vuetifyLogo,
+    src: "/images/vuetify.svg",
     text: "Vuetify",
   },
   {
-    src: vuexLogo,
+    src: "/images/vuex.png",
     text: "vuex",
   },
   {
-    src: piniaLogo,
+    src: "/images/pinia.svg",
     text: "Pinia",
   },
   {
-    src: bootstrapLogo,
+    src: "/images/bootstrap.svg",
     text: "Bootstrap",
   },
   {
-    src: htmlLogo,
+    src: "/images/html.svg",
     text: "HTML",
   },
   {
-    src: cssLogo,
+    src: "/images/css.svg",
     text: "CSS",
   },
   {
-    src: jsLogo,
+    src: "/images/javascript.svg",
     text: "Javascript",
   },
   {
-    src: tsLogo,
+    src: "/images/typescript.svg",
     text: "TypeScript",
   },
   {
-    src: scssLogo,
+    src: "/images/sass.svg",
     text: "Sass (Scss)",
   },
 ];
 const knowBasics = [
   {
-    src: reactLogo,
+    src: "/images/react.png",
     text: "React",
   },
   {
-    src: nodeLogo,
+    src: "/images/nodejs.svg",
     text: "Node.js",
   },
   {
-    src: tailwindLogo,
+    src: "/images/tailwind.png",
     text: "Tailwind",
   },
   {
-    src: graphqlLogo,
+    src: "/images/graphql.png",
     text: "GraphQL",
   },
   {
-    src: firebaseLogo,
+    src: "/images/firebase.svg",
     text: "Firebase",
   },
 ];
@@ -508,8 +483,11 @@ const knowBasics = [
 
 <style lang="scss">
 #home {
-  img {
+  .logo {
     width: 80%;
+    img {
+      width: 80%;
+    }
   }
 }
 
@@ -530,8 +508,7 @@ const knowBasics = [
 
 .project-image {
   @media only screen and (max-width: 600px) {
-    height: 400px
-    img {
+    height: 400px img {
       object-fit: contain;
       height: 100%;
     }
