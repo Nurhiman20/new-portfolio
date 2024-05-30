@@ -1,5 +1,12 @@
 <template>
-  <v-navigation-drawer v-model="drawer" rail color="#181818" dark expand-on-hover>
+  <v-navigation-drawer
+    v-model="drawer"
+    rail
+    color="#181818"
+    dark
+    permanent
+    expand-on-hover
+  >
     <v-list-item
       class="px-2"
       prepend-avatar="@/assets/images/Ava.png"
@@ -32,11 +39,7 @@
                 </div>
                 <div>
                   <p class="text-grey">Front-end Web Developer</p>
-                  <v-btn
-                    outlined
-                    large
-                    color="primary"
-                    @click="$vuetify.goTo('#contact', options)"
+                  <v-btn outlined large color="primary" @click="scrollTo('#contact')"
                     >Contact Me</v-btn
                   >
                 </div>
@@ -64,17 +67,16 @@
             >
               <v-sheet
                 color="#1D1D1D"
-                height="100%"
                 class="d-flex flex-column justify-center align-center"
               >
                 <v-row>
                   <v-col cols="12" md="8" lg="8" class="px-12">
-                    <div class="fill-height d-flex">
-                      <v-img
-                        :aspect-ratio="1366 / 625"
-                        width="60"
+                    <div class="d-flex flex-column w-100 project-image">
+                      <img
                         :src="itemProject.image"
-                      ></v-img>
+                        alt="preview"
+                        class="project-image w-100"
+                      ></img>
                     </div>
                   </v-col>
                   <v-col cols="12" md="4" lg="4" class="px-4">
@@ -524,5 +526,15 @@ const knowBasics = [
 
 .project-title {
   line-height: 40px;
+}
+
+.project-image {
+  @media only screen and (max-width: 600px) {
+    height: 400px
+    img {
+      object-fit: contain;
+      height: 100%;
+    }
+  }
 }
 </style>
