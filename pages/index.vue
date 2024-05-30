@@ -113,7 +113,7 @@
             <div class="d-flex pa-4">
               <div class="mx-auto mb-6">
                 <v-avatar size="30vh">
-                  <img src="@/assets/images/foto.png" alt="Angga Nurhiman" />
+                  <v-img src="@/assets/images/foto.png" alt="Angga Nurhiman" />
                 </v-avatar>
               </div>
             </div>
