@@ -1,7 +1,9 @@
 <template>
   <NuxtLayout>
     <v-app id="app">
+      <a href="#main" class="skip-link">Skip to content</a>
       <NuxtPage />
+      <div class="grain" aria-hidden="true" />
     </v-app>
   </NuxtLayout>
 </template>
