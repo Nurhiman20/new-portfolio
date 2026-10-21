@@ -15,10 +15,10 @@
           <h2 id="about-title" class="section-title reveal">A little <em>about</em> me.</h2>
 
           <p class="about__lead reveal">
-            My name is Angga Nurhiman. I'm a front-end web developer living in Bogor, Indonesia.
+            My name is Angga Nurhiman. I'm a front-end developer living in Bogor, Indonesia.
           </p>
           <p class="about__body reveal">
-            As a front-end web developer, I have experience using Vue.js. I like it when I can
+            As a front-end developer, I have experience using Vue.js. I like it when I can
             overcome problems with that technology, and also I'm interested in learning new things.
           </p>
 

@@ -108,8 +108,8 @@ export const projects: Project[] = [
     title: 'MakasiPOS Mobile Apps',
     image: '/images/makasipos-mobile.png',
     description:
-      'Mobile point of sales app for Makasi merchants. Cashiers sign in with SMS OTP, switch between outlets, browse and search the product list, and build orders with customer details, sales channels (e.g. GoFood, online), quantities, and discounts.',
-    stacks: ['Mobile', 'Flutter', 'Dart', 'API Integration'],
+      'Flutter point of sales app for Makasi merchants. I set up the project foundation (theming, GetX state management and routing, reusable widgets) and built registration with phone/email OTP, login and forgot-PIN flows; the order flow from order details and manual transactions to cash/digital payment, receipts, and pay-later (kasbon) transactions; online order handling with status updates and preparation countdown; cash recap for opening/closing the cashier; discount, voucher, customer, and employee management; outlet switching; and merchant personal data, bank account, and disbursement.',
+    stacks: ['Mobile', 'Flutter', 'Dart', 'GetX', 'Hive', 'API Integration'],
   },
   {
     title: 'TCI Landing Page',
@@ -147,6 +147,7 @@ export const mostUsedSkills: Skill[] = [
   { src: '/images/vuetify.svg', text: 'Vuetify' },
   { src: '/images/vuex.png', text: 'Vuex' },
   { src: '/images/pinia.svg', text: 'Pinia' },
+  { src: '/images/tailwind.png', text: 'Tailwind' },
   { src: '/images/bootstrap.svg', text: 'Bootstrap' },
   { src: '/images/html.svg', text: 'HTML' },
   { src: '/images/css.svg', text: 'CSS' },
@@ -158,14 +159,13 @@ export const mostUsedSkills: Skill[] = [
 export const knowBasics: Skill[] = [
   { src: '/images/react.png', text: 'React' },
   { src: '/images/nodejs.svg', text: 'Node.js' },
-  { src: '/images/tailwind.png', text: 'Tailwind' },
   { src: '/images/graphql.png', text: 'GraphQL' },
   { src: '/images/firebase.svg', text: 'Firebase' },
 ]
 
 export const mobileSkills: Skill[] = [
-  { text: 'Dart' },
-  { text: 'Flutter' },
+  { src: '/images/dart.svg', text: 'Dart' },
+  { src: '/images/flutter.svg', text: 'Flutter' },
   { text: 'Provider' },
   { text: 'GetX' },
 ]

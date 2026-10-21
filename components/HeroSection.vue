@@ -15,7 +15,7 @@
 
       <div class="hero__bottom">
         <p class="hero__lede fade" style="--d: 0.7s">
-          Front-end web developer building considered, fast interfaces — mostly with
+          Front-end developer building considered, fast interfaces — mostly with
           <strong>Vue.js</strong> &amp; <strong>Nuxt</strong>.
         </p>
 
